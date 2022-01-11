@@ -7,6 +7,8 @@ public class Podracer {
 	private static final int MAX_SPEED = 900;
 	private String driver;
 	private Podrace race;
+	private int distanceRaced;
+	private int position;
 
 	public Podracer(String driver, Podrace race) {
 		this.driver = driver;
@@ -17,4 +19,11 @@ public class Podracer {
 		return driver;
 	}
 
+	public void setPosition(int position) {
+		this.position = position;
+	}
+
+	public int getPosition() {
+		return position;
+	}
 }

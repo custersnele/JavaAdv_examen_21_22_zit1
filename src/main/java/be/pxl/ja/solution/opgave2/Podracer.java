@@ -8,15 +8,23 @@ public class Podracer extends Thread {
 	private String driver;
 	private Podrace race;
 	private int distanceRaced;
+	private int position;
 
 	public Podracer(String title, Podrace race) {
 		this.driver = title;
 		this.race = race;
-		race.register(this);
 	}
 
 	public String getDriver() {
 		return driver;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+
+	public int getPosition() {
+		return position;
 	}
 
 	@Override
@@ -25,7 +33,7 @@ public class Podracer extends Thread {
 			if (RANDOM.nextDouble() < 0.02) {
 				throw new CrashException(this);
 			}
-			distanceRaced += (RANDOM.nextDouble(0.5) + 0.5) * MAX_SPEED;
+			distanceRaced += (RANDOM.nextDouble() / 2 + 0.5) * MAX_SPEED;
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
