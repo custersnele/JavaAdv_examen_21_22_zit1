@@ -44,7 +44,8 @@ public class BuildingApp {
 
 	// 4. Hoeveel van de buildings worden gebruikt als hotel?
 	public long solution4() {
-		return buildings.stream().filter(b -> b.getUsage().contains("hotel"))
+		return buildings.stream().filter(b -> b.getUsage().contains("restaurant"))
+				.peek(s -> System.out.println(s))
 				.count();
 		// TODO
 		// throw new UnsupportedOperationException();

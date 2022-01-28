@@ -35,7 +35,7 @@ class BuildingAppTest {
 
 	@Test
 	void solution4() {
-		assertEquals(9, buildingApp.solution4());
+		assertEquals(8, buildingApp.solution4());
 	}
 
 	@Test

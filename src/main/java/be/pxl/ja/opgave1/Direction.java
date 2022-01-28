@@ -7,6 +7,8 @@ public enum Direction {
 	EAST;
 
 	public static Direction fromCharacter(char letter) {
+		// The following switch only works in java 14 and later.
+		// IntelliJ can help you to fix it if you use an older version.
 		return switch (letter) {
 			case 'W' -> WEST;
 			case 'S' -> SOUTH;

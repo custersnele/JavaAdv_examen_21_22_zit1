@@ -3,9 +3,11 @@ package be.pxl.ja.opgave1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BuildingAppTest {
 
@@ -18,7 +20,7 @@ class BuildingAppTest {
 
 	@Test
 	void solution1() {
-		assertEquals(5, buildingApp.solution1());
+		assertEquals(68, buildingApp.solution1());
 	}
 
 	@Test
@@ -28,7 +30,7 @@ class BuildingAppTest {
 
 	@Test
 	void solution3() {
-		assertEquals(9, buildingApp.solution3());
+		assertEquals(8, buildingApp.solution3());
 	}
 
 	@Test
@@ -39,8 +41,10 @@ class BuildingAppTest {
 	@Test
 	void solution5() {
 		List<Building> actual = buildingApp.solution5();
-		assertEquals(2, actual.size());
-		assertEquals("Dubai", actual.get(0).getLocation().getCity());
-		assertEquals("Shenzhen", actual.get(1).getLocation().getCity());
+		assertEquals(5, actual.size());
+		List<String> validBuildings = Arrays.asList("Goldin Finance 117", "Haeundae LCT The Sharp Landmark Tower", "Colombo Lotus Tower", "Ping An International Finance Center", "Lotte World Tower");
+		for (Building structure : actual) {
+			assertTrue(validBuildings.contains(structure.getName()));
+		}
 	}
 }
